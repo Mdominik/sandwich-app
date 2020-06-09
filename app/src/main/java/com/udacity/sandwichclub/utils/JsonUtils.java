@@ -38,6 +38,16 @@ public class JsonUtils {
             for(int i=0; i<ingredients.length(); i++) {
                 ingredientsTab.add(ingredients.getString(i));
             }
+
+            if(placeOfOrigin.equals("")) {
+
+                placeOfOrigin = "not specified";
+                Log.e("place of origin", placeOfOrigin);
+            }
+            if(alsoKnownAs.length() == 0) {
+                Log.e("alsoKnownAs", "not working");
+                alsoKnowsAsTab.add("no aliases");
+            }
             return new Sandwich(mainName, alsoKnowsAsTab, placeOfOrigin, description, imageURL, ingredientsTab);
 
         } catch (JSONException e) {

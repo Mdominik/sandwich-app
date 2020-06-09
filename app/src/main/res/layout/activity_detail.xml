@@ -1,105 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.udacity.sandwichclub.DetailActivity">
+    android:layout_marginRight="@dimen/font_size_medium"
+    android:layout_marginLeft="@dimen/font_size_medium">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="38dp">
+        android:orientation="vertical"
 
+        tools:context="com.udacity.sandwichclub.DetailActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/font_size_medium">
 
             <ImageView
                 android:id="@+id/image_iv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:contentDescription="@string/sandwich_picture_content_description"
-                android:scaleType="centerCrop" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="96dp"
-                android:layout_height="17dp"
-                android:text="@string/detail_description_label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/description_tv"
-                android:layout_width="193dp"
-                android:layout_height="21dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:text="@string/detail_place_of_origin_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="458dp" />
-
-            <TextView
-                android:id="@+id/origin_tv"
-                android:layout_width="180dp"
-                android:layout_height="26dp"
-                android:layout_gravity="bottom"
-                android:text="REEEEEEEEEE"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.367"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                tools:layout_editor_absoluteY="453dp" />
-
-            <TextView
-                android:id="@+id/ingredients_tv"
-                android:layout_width="184dp"
-                android:layout_height="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.287"
-                app:layout_constraintStart_toEndOf="@+id/ingredients_label"
-                tools:layout_editor_absoluteY="530dp" />
-
-            <TextView
-                android:id="@+id/ingredients_label"
-                android:layout_width="99dp"
-                android:layout_height="29dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:text="@string/detail_ingredients_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="526dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:text="@string/detail_also_known_as_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="494dp" />
-
-            <TextView
-                android:id="@+id/also_known_tv"
-                android:layout_width="190dp"
-                android:layout_height="22dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.328"
-                app:layout_constraintStart_toEndOf="@+id/textView2"
-                tools:layout_editor_absoluteY="494dp" />
+                android:gravity="center"
+                android:scaleType="center"/>
         </LinearLayout>
-    </ScrollView>
 
 
-</FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="@dimen/font_size_medium"
+            >
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/colorPrimary">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_also_known_as_label"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_medium"/>
+
+                <TextView
+                    android:id="@+id/also_known_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_small"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_place_of_origin_label"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_medium"/>
+
+                <TextView
+                    android:id="@+id/origin_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_small"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                >
+                <TextView
+                    android:id="@+id/ingredients_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_ingredients_label"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_medium"/>
+                <TextView
+                    android:id="@+id/ingredients_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_small"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_description_label"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_medium"/>
+
+                <TextView
+                    android:id="@+id/description_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_size_small"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
